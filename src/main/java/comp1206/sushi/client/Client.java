@@ -27,8 +27,7 @@ public class Client implements ClientInterface {
 	
 	public Client() {
         logger.info("Starting up client...");
-         commsClient = new CommsClient(2239, "localhost", this);
-         Thread clientThread = new Thread(commsClient);
+         Thread clientThread = new Thread(new CommsClient(2239, "localhost", this));
          clientThread.start();
 
 

@@ -32,11 +32,10 @@ public class CommsClient implements Runnable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
-        Thread clientThread = new Thread(this);
-        clientThread.start();
-
-
+    @Override
+    public void run() {
     }
 
     public CommsClient(Socket socket){
@@ -71,9 +70,5 @@ public class CommsClient implements Runnable {
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-    }
-
-    @Override
-    public void run() {
     }
 }

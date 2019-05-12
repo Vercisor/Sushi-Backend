@@ -38,8 +38,8 @@ public class Server implements ServerInterface {
 		restaurant = new Restaurant("Mock Restaurant",restaurantPostcode);
 		stockManagement = new StockManagement(this);
 		restaurantPostcode.getLatLong();
-		CommsServer commsServer2 = new CommsServer(2239, this);
-		System.out.println("Hello");
+		Thread commsThread = new Thread(new CommsServer(2239, this));
+		commsThread.start();
 	}
 
 

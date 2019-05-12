@@ -28,11 +28,6 @@ public class CommsServer implements Runnable{
         try{
             serverSocket = new ServerSocket(port);
             log("Listening on port "+ port +"...");
-            socket = serverSocket.accept();
-            log("Accepted connection!");
-            //clients.add(new CommsClient(socket));
-            in = new ObjectInputStream(socket.getInputStream());
-            out = new ObjectOutputStream(socket.getOutputStream());
         }
         catch(IOException e){ e.printStackTrace(); }
     }
@@ -40,6 +35,15 @@ public class CommsServer implements Runnable{
     @Override
     public void run() {
 
+        try {
+            socket = serverSocket.accept();
+            log("Accepted connection!");
+            //clients.add(new CommsClient(socket));
+            in = new ObjectInputStream(socket.getInputStream());
+            out = new ObjectOutputStream(socket.getOutputStream());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     private void log(String s){
