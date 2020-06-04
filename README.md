@@ -26,12 +26,9 @@ The main source tree can be found in src/main/java
 - Executing java -jar sushi-2.jar client will start the client.
 
 ## Creating the jar file
-    ```mvn install```
+    mvn install
 
 ## Running
-    ```
     java -jar target/sushi-2.jar
     java -jar target/sushi-2.jar server
     java -jar target/sushi-2.jar client
-    ```
-
